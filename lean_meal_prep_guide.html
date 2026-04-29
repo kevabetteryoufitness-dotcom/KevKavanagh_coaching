@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Lean Meal Prep Method – ABetterYou Fitness</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #FF3B1F;
+    --dark: #0a0a0a;
+    --card: #141414;
+    --card2: #1a1a1a;
+    --border: #2a2a2a;
+    --text: #e8e8e8;
+    --muted: #888;
+    --white: #ffffff;
+    --gold: #F5A623;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--dark);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* ── PAGE WRAPPER ── */
+  .guide {
+    width: 960px;
+    margin: 0 auto;
+    background: var(--dark);
+  }
+
+  /* ── COVER ── */
+  .cover {
+    width: 960px;
+    height: 720px;
+    background: var(--dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -120px; left: -120px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(255,59,31,0.18) 0%, transparent 70%);
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -100px; right: -80px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(255,59,31,0.12) 0%, transparent 70%);
+  }
+  .cover-top-bar {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--red);
+  }
+  .cover-bottom-bar {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--red);
+  }
+  .cover-label {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 24px;
+    z-index: 1;
+  }
+  .cover-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 110px;
+    line-height: 0.9;
+    text-align: center;
+    color: var(--white);
+    z-index: 1;
+    letter-spacing: 2px;
+  }
+  .cover-title span {
+    color: var(--red);
+  }
+  .cover-subtitle {
+    margin-top: 28px;
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--muted);
+    letter-spacing: 1px;
+    z-index: 1;
+    text-align: center;
+  }
+  .cover-brand {
+    position: absolute;
+    bottom: 28px;
+    right: 36px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-transform: uppercase;
+    z-index: 1;
+  }
+  .cover-brand strong {
+    color: var(--red);
+  }
+  .cover-handle {
+    position: absolute;
+    bottom: 28px;
+    left: 36px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: var(--muted);
+    z-index: 1;
+  }
+  .cover-divider {
+    width: 60px;
+    height: 2px;
+    background: var(--red);
+    margin: 20px auto;
+    z-index: 1;
+  }
+
+  /* ── SECTION PAGES ── */
+  .page {
+    width: 960px;
+    min-height: 720px;
+    padding: 52px 60px;
+    position: relative;
+    page-break-after: always;
+    background: var(--dark);
+  }
+  .page-accent {
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--red);
+  }
+  .page-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 36px;
+  }
+  .page-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    color: var(--red);
+    letter-spacing: 2px;
+  }
+  .section-tag {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-left: auto;
+  }
+  .page-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 52px;
+    color: var(--white);
+    line-height: 1;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+  .page-title span { color: var(--red); }
+
+  .page-intro {
+    font-size: 14px;
+    color: var(--muted);
+    max-width: 680px;
+    margin-bottom: 28px;
+    line-height: 1.7;
+  }
+
+  /* ── ESSENTIALS BOX ── */
+  .essentials-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--red);
+    padding: 28px 32px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+  }
+  .essentials-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+  .essentials-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 32px;
+  }
+  .essentials-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13.5px;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .dot {
+    width: 5px;
+    height: 5px;
+    background: var(--red);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+
+  /* ── STEP CARDS ── */
+  .steps-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .step-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 22px 24px;
+    position: relative;
+  }
+  .step-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    color: var(--red);
+    opacity: 0.25;
+    position: absolute;
+    top: 12px; right: 18px;
+    line-height: 1;
+  }
+  .step-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    color: var(--white);
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+  .step-body {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+  .step-options {
+    margin-top: 8px;
+  }
+  .step-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text);
+    margin-bottom: 3px;
+  }
+
+  /* ── RULES BANNER ── */
+  .rules-banner {
+    background: var(--red);
+    border-radius: 6px;
+    padding: 20px 28px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .rules-banner-icon {
+    font-size: 28px;
+  }
+  .rules-banner-text {
+    font-size: 13.5px;
+    color: var(--white);
+    line-height: 1.6;
+    font-weight: 400;
+  }
+  .rules-banner-text strong {
+    font-weight: 700;
+    display: block;
+    font-size: 15px;
+    margin-bottom: 2px;
+  }
+
+  /* ── CHECKLIST ── */
+  .checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 14px 18px;
+    font-size: 13.5px;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .check-icon {
+    width: 20px;
+    height: 20px;
+    background: var(--red);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .check-icon svg {
+    width: 10px; height: 10px;
+    stroke: white;
+    stroke-width: 2.5;
+    fill: none;
+  }
+
+  /* ── RECIPE PAGES ── */
+  .recipe-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  .recipe-header {
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+  .recipe-color-bar {
+    width: 4px;
+    align-self: stretch;
+    background: var(--red);
+    flex-shrink: 0;
+  }
+  .recipe-info {
+    padding: 20px 22px;
+    flex: 1;
+  }
+  .recipe-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    color: var(--white);
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .recipe-macros {
+    display: flex;
+    gap: 16px;
+  }
+  .macro-pill {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+  }
+  .macro-cal {
+    background: rgba(255,59,31,0.15);
+    color: var(--red);
+    border: 1px solid rgba(255,59,31,0.3);
+  }
+  .macro-prot {
+    background: rgba(245,166,35,0.12);
+    color: var(--gold);
+    border: 1px solid rgba(245,166,35,0.25);
+  }
+  .recipe-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-top: 1px solid var(--border);
+  }
+  .recipe-col {
+    padding: 16px 22px;
+  }
+  .recipe-col + .recipe-col {
+    border-left: 1px solid var(--border);
+  }
+  .recipe-col-title {
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  .recipe-ingredient {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 12.5px;
+    color: var(--text);
+    margin-bottom: 4px;
+    line-height: 1.5;
+  }
+  .recipe-step {
+    display: flex;
+    gap: 10px;
+    font-size: 12.5px;
+    color: var(--text);
+    margin-bottom: 5px;
+    line-height: 1.5;
+  }
+  .step-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    color: var(--red);
+    flex-shrink: 0;
+    width: 16px;
+    margin-top: 1px;
+  }
+
+  /* ── RECIPES GRID (2 per row) ── */
+  .recipes-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* ── CTA PAGE ── */
+  .cta-page {
+    width: 960px;
+    height: 720px;
+    background: var(--dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding: 60px;
+  }
+  .cta-page::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(255,59,31,0.10) 0%, transparent 65%);
+  }
+  .cta-top-bar {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--red);
+  }
+  .cta-bottom-bar {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--red);
+  }
+  .cta-eyebrow {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 20px;
+    z-index: 1;
+  }
+  .cta-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 72px;
+    line-height: 0.95;
+    color: var(--white);
+    z-index: 1;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+  }
+  .cta-body {
+    font-size: 15px;
+    color: var(--muted);
+    max-width: 480px;
+    line-height: 1.7;
+    z-index: 1;
+    margin-bottom: 36px;
+  }
+  .cta-handle {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    letter-spacing: 2px;
+    color: var(--red);
+    z-index: 1;
+    margin-bottom: 10px;
+  }
+  .cta-sub {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-transform: uppercase;
+    z-index: 1;
+  }
+  .cta-divider {
+    width: 50px; height: 2px;
+    background: var(--red);
+    margin: 24px auto;
+    z-index: 1;
+  }
+
+  /* ── PAGE FOOTER ── */
+  .page-footer {
+    position: absolute;
+    bottom: 20px; right: 40px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--border);
+    text-transform: uppercase;
+  }
+
+  /* ── TWO-COLUMN LAYOUT ── */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .info-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .info-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .info-text strong {
+    display: block;
+    font-size: 13px;
+    color: var(--white);
+    margin-bottom: 2px;
+  }
+  .info-text span {
+    font-size: 12.5px;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  .highlight-box {
+    background: rgba(255,59,31,0.07);
+    border: 1px solid rgba(255,59,31,0.2);
+    border-radius: 6px;
+    padding: 18px 22px;
+    margin-top: 16px;
+  }
+  .highlight-box p {
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.6;
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+<div class="guide">
+
+  <!-- ══════════ COVER PAGE ══════════ -->
+  <div class="cover">
+    <div class="cover-top-bar"></div>
+    <div class="cover-bottom-bar"></div>
+    <div class="cover-label">ABetterYou Fitness · Free Resource</div>
+    <div class="cover-title">THE LEAN<br><span>MEAL PREP</span><br>METHOD</div>
+    <div class="cover-divider"></div>
+    <div class="cover-subtitle">Your complete guide to fast, tasty & high-protein meal prep</div>
+    <div class="cover-handle">@kevkavanagh_coaching</div>
+    <div class="cover-brand"><strong>ABetterYou</strong> Fitness</div>
+  </div>
+
+  <!-- ══════════ PAGE 1 · FILL YOUR FRIDGE ══════════ -->
+  <div class="page">
+    <div class="page-accent"></div>
+    <div class="page-header">
+      <div class="page-number">01</div>
+      <div class="section-tag">Foundation</div>
+    </div>
+    <div class="page-title">Fill Your <span>Fridge</span></div>
+    <div class="page-intro">
+      Having a well-stocked fridge is everything. When your kitchen is ready, healthy eating becomes effortless. Here are the key essentials we always recommend keeping on hand.
+    </div>
+
+    <div class="essentials-box">
+      <div class="essentials-label">Everyday Fridge Essentials</div>
+      <div class="essentials-grid">
+        <div class="essentials-item"><div class="dot"></div>Greek yoghurt – 0% / 2% lower cal options</div>
+        <div class="essentials-item"><div class="dot"></div>Eggs – perfect for extra protein in preps & brekkie</div>
+        <div class="essentials-item"><div class="dot"></div>Berries – blueberries, raspberries, strawberries</div>
+        <div class="essentials-item"><div class="dot"></div>Salad greens – mixed salad, tomatoes, cucumber</div>
+        <div class="essentials-item"><div class="dot"></div>Veggies – broccoli, green beans, carrots</div>
+        <div class="essentials-item"><div class="dot"></div>Lean meats of your choice (options below)</div>
+        <div class="essentials-item"><div class="dot"></div>Carbs of your choice (recommended options below)</div>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <p>💡 <strong>Pro Tip:</strong> Prep your fridge before your weekly cook. Knowing exactly what you have stops last-minute bad food decisions and saves you money.</p>
+    </div>
+
+    <div class="page-footer">@kevkavanagh_coaching</div>
+  </div>
+
+  <!-- ══════════ PAGE 2 · PREP STEPS ══════════ -->
+  <div class="page">
+    <div class="page-accent"></div>
+    <div class="page-header">
+      <div class="page-number">02</div>
+      <div class="section-tag">The Method</div>
+    </div>
+    <div class="page-title">The <span>6 Prep</span> Steps</div>
+
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <div class="step-label">Ace Your Base</div>
+        <div class="step-body">Every meal needs a quality carb to keep energy levels stable.</div>
+        <div class="step-options">
+          <div class="step-option"><div class="dot"></div>Wholemeal pasta</div>
+          <div class="step-option"><div class="dot"></div>New potatoes / sweet potato</div>
+          <div class="step-option"><div class="dot"></div>Brown rice / couscous</div>
+          <div class="step-option"><div class="dot"></div>Wraps / protein pasta</div>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <div class="step-label">Pick Your Protein</div>
+        <div class="step-body">This is where you hit your daily protein goal. Lean options:</div>
+        <div class="step-options">
+          <div class="step-option"><div class="dot"></div>Chicken breast / turkey steaks</div>
+          <div class="step-option"><div class="dot"></div>Turkey mince / turkey meatballs</div>
+          <div class="step-option"><div class="dot"></div>Lean red mince (5% fat)</div>
+          <div class="step-option"><div class="dot"></div>Tuna / white fish · Tofu</div>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <div class="step-label">Choose Your Veg</div>
+        <div class="step-body">Bulk out your meals for fibre and volume. Mix it up for variety.</div>
+        <div class="step-options">
+          <div class="step-option"><div class="dot"></div>Broccoli · Carrots · Green beans</div>
+          <div class="step-option"><div class="dot"></div>Babycorn · Asparagus · Spinach</div>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">4</div>
+        <div class="step-label">Add Flavour</div>
+        <div class="step-body">Meal prep doesn't have to be boring. Low-cal seasonings (under 10 cals per serving):</div>
+        <div class="step-options">
+          <div class="step-option"><div class="dot"></div>Paprika · Chilli · Turmeric · Cumin</div>
+          <div class="step-option"><div class="dot"></div>Nando's sauces · 10-cal mayo · Low-sugar ketchup</div>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">5</div>
+        <div class="step-label">Keep It Simple</div>
+        <div class="step-body">Don't try 5 different meals a week — it's overwhelming. Stick to 1 or 2 meals, rotate them through the week. Simple = sustainable.</div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">6</div>
+        <div class="step-label">Stock Up</div>
+        <div class="step-body">Prep for 4 days max if storing in the fridge. We recommend Sunday → Thursday, then re-prep or cook fresh on weekends.</div>
+      </div>
+    </div>
+
+    <div class="page-footer">@kevkavanagh_coaching</div>
+  </div>
+
+  <!-- ══════════ PAGE 3 · BEFORE YOU COOK ══════════ -->
+  <div class="page">
+    <div class="page-accent"></div>
+    <div class="page-header">
+      <div class="page-number">03</div>
+      <div class="section-tag">Rules</div>
+    </div>
+    <div class="page-title">Before You <span>Cook</span></div>
+    <div class="page-intro">Every recipe below follows the same simple approach. Keep these rules in mind and you'll always be on track.</div>
+
+    <div class="checklist">
+      <div class="check-item">
+        <div class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+        <span><strong>Calories & protein are based on the exact grams stated.</strong> Adjust portions up or down to hit your personal daily targets.</span>
+      </div>
+      <div class="check-item">
+        <div class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+        <span><strong>Always pre-prep before you plan your week.</strong> Know your serving sizes and calories before you commit to a prep.</span>
+      </div>
+      <div class="check-item">
+        <div class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+        <span><strong>Track your food</strong> so you stay within your daily calorie target. Apps like MyFitnessPal make this simple.</span>
+      </div>
+      <div class="check-item">
+        <div class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+        <span><strong>Vegetarian swaps are noted</strong> for each recipe — just look for the (v) tag next to the protein ingredient.</span>
+      </div>
+      <div class="check-item">
+        <div class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+        <span><strong>These meals are fast, low-calorie, and high-protein.</strong> No complex techniques, no obscure ingredients — just results.</span>
+      </div>
+    </div>
+
+    <div class="rules-banner" style="margin-top: 24px;">
+      <div class="rules-banner-icon">🔑</div>
+      <div class="rules-banner-text">
+        <strong>The Golden Rule</strong>
+        Keep it simple, stay consistent. One solid prep beats five failed attempts at perfection every single time.
+      </div>
+    </div>
+
+    <div class="page-footer">@kevkavanagh_coaching</div>
+  </div>
+
+  <!-- ══════════ PAGE 4 · RECIPES 1 & 2 ══════════ -->
+  <div class="page">
+    <div class="page-accent"></div>
+    <div class="page-header">
+      <div class="page-number">04</div>
+      <div class="section-tag">Recipes</div>
+    </div>
+    <div class="page-title">Quick &amp; Tasty <span>Preps</span></div>
+
+    <div class="recipes-grid">
+      <!-- Recipe 1 -->
+      <div class="recipe-card">
+        <div class="recipe-header">
+          <div class="recipe-color-bar"></div>
+          <div class="recipe-info">
+            <div class="recipe-name">Lemon &amp; Herb Fish with Minted Potatoes</div>
+            <div class="recipe-macros">
+              <span class="macro-pill macro-cal">278 kcal</span>
+              <span class="macro-pill macro-prot">20g protein</span>
+            </div>
+          </div>
+        </div>
+        <div class="recipe-body">
+          <div class="recipe-col">
+            <div class="recipe-col-title">You Need</div>
+            <div class="recipe-ingredient"><div class="dot"></div>White fillet fish 135g</div>
+            <div class="recipe-ingredient"><div class="dot"></div>New potatoes 220g</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Garlic powder, mixed herbs, black pepper</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Lemon juice · Veggies of choice</div>
+          </div>
+          <div class="recipe-col">
+            <div class="recipe-col-title">Method</div>
+            <div class="recipe-step"><div class="step-num">1</div>Chop potatoes, season, place in oven dish – cook 30 mins.</div>
+            <div class="recipe-step"><div class="step-num">2</div>Wrap fish in foil with mixed herbs – oven 20 mins.</div>
+            <div class="recipe-step"><div class="step-num">3</div>Cook veggies and serve!</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recipe 2 -->
+      <div class="recipe-card">
+        <div class="recipe-header">
+          <div class="recipe-color-bar"></div>
+          <div class="recipe-info">
+            <div class="recipe-name">Chicken Fried Rice Prep</div>
+            <div class="recipe-macros">
+              <span class="macro-pill macro-cal">490 kcal</span>
+              <span class="macro-pill macro-prot">20g protein</span>
+            </div>
+          </div>
+        </div>
+        <div class="recipe-body">
+          <div class="recipe-col">
+            <div class="recipe-col-title">You Need</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Chicken breast 130g (v: chicken-style pieces)</div>
+            <div class="recipe-ingredient"><div class="dot"></div>1 egg · Brown basmati rice 60g</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Mixed greens – peas, pepper</div>
+          </div>
+          <div class="recipe-col">
+            <div class="recipe-col-title">Method</div>
+            <div class="recipe-step"><div class="step-num">1</div>Cook rice in separate pan.</div>
+            <div class="recipe-step"><div class="step-num">2</div>Chop &amp; fry chicken in fry light, set aside.</div>
+            <div class="recipe-step"><div class="step-num">3</div>Crack &amp; scramble egg in pan, add chicken + rice.</div>
+            <div class="recipe-step"><div class="step-num">4</div>Add veggies and serve.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recipe 3 -->
+      <div class="recipe-card">
+        <div class="recipe-header">
+          <div class="recipe-color-bar"></div>
+          <div class="recipe-info">
+            <div class="recipe-name">Fajita Chicken Prep</div>
+            <div class="recipe-macros">
+              <span class="macro-pill macro-cal">350 kcal</span>
+              <span class="macro-pill macro-prot">40g protein</span>
+            </div>
+          </div>
+        </div>
+        <div class="recipe-body">
+          <div class="recipe-col">
+            <div class="recipe-col-title">You Need</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Chicken breast 135g (v: chicken-style pieces)</div>
+            <div class="recipe-ingredient"><div class="dot"></div>New potatoes 220g · 1 pepper</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Fajita spice, mixed herbs · Veggies</div>
+          </div>
+          <div class="recipe-col">
+            <div class="recipe-col-title">Method</div>
+            <div class="recipe-step"><div class="step-num">1</div>Potatoes with mixed herbs in oven dish – 30 mins.</div>
+            <div class="recipe-step"><div class="step-num">2</div>Chicken with fajita seasoning &amp; sliced pepper – 30 mins.</div>
+            <div class="recipe-step"><div class="step-num">3</div>Cook veggies and serve!</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">@kevkavanagh_coaching</div>
+  </div>
+
+  <!-- ══════════ PAGE 5 · RECIPES 3–5 ══════════ -->
+  <div class="page">
+    <div class="page-accent"></div>
+    <div class="page-header">
+      <div class="page-number">05</div>
+      <div class="section-tag">Recipes</div>
+    </div>
+    <div class="page-title">More <span>Preps</span></div>
+
+    <div class="recipes-grid">
+      <div class="recipe-card">
+        <div class="recipe-header">
+          <div class="recipe-color-bar"></div>
+          <div class="recipe-info">
+            <div class="recipe-name">Spicy Turkey Meatballs &amp; Pasta</div>
+            <div class="recipe-macros">
+              <span class="macro-pill macro-cal">400 kcal</span>
+              <span class="macro-pill macro-prot">24g protein</span>
+            </div>
+          </div>
+        </div>
+        <div class="recipe-body">
+          <div class="recipe-col">
+            <div class="recipe-col-title">You Need</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Turkey meatballs 130g (pre-made)</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Wholemeal pasta 65g · 1 pepper</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Veggies of choice</div>
+          </div>
+          <div class="recipe-col">
+            <div class="recipe-col-title">Method</div>
+            <div class="recipe-step"><div class="step-num">1</div>Meatballs + mixed herbs + chopped pepper – oven 30 mins.</div>
+            <div class="recipe-step"><div class="step-num">2</div>With 12 mins to go, boil pasta.</div>
+            <div class="recipe-step"><div class="step-num">3</div>Cook veggies and serve!</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="recipe-card">
+        <div class="recipe-header">
+          <div class="recipe-color-bar"></div>
+          <div class="recipe-info">
+            <div class="recipe-name">Spicy Tomato Chicken Pasta</div>
+            <div class="recipe-macros">
+              <span class="macro-pill macro-cal">450 kcal</span>
+              <span class="macro-pill macro-prot">40g protein</span>
+            </div>
+          </div>
+        </div>
+        <div class="recipe-body">
+          <div class="recipe-col">
+            <div class="recipe-col-title">You Need</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Chicken breast 130g (v: chicken-style pieces)</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Wholemeal pasta 70g · Chicken spice</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Tomato pasta sauce ½ pot · Veggies</div>
+          </div>
+          <div class="recipe-col">
+            <div class="recipe-col-title">Method</div>
+            <div class="recipe-step"><div class="step-num">1</div>Fry chicken in fry light with chicken spice – 15 mins.</div>
+            <div class="recipe-step"><div class="step-num">2</div>Boil pasta, drain, add pasta sauce to pan.</div>
+            <div class="recipe-step"><div class="step-num">3</div>Mix in pasta, serve with veggies.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="recipe-card">
+        <div class="recipe-header">
+          <div class="recipe-color-bar"></div>
+          <div class="recipe-info">
+            <div class="recipe-name">Chicken Gyros Wrap</div>
+            <div class="recipe-macros">
+              <span class="macro-pill macro-cal">450 kcal</span>
+              <span class="macro-pill macro-prot">40g protein</span>
+            </div>
+          </div>
+        </div>
+        <div class="recipe-body">
+          <div class="recipe-col">
+            <div class="recipe-col-title">You Need</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Chicken breast 135g (v: chicken-style pieces)</div>
+            <div class="recipe-ingredient"><div class="dot"></div>1 flatbread · Chicken spice</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Mixed salad, cucumber, tomatoes</div>
+          </div>
+          <div class="recipe-col">
+            <div class="recipe-col-title">Method</div>
+            <div class="recipe-step"><div class="step-num">1</div>Fry chicken with chicken spice – 15 mins.</div>
+            <div class="recipe-step"><div class="step-num">2</div>Chop cucumber and tomatoes.</div>
+            <div class="recipe-step"><div class="step-num">3</div>Load into flatbread, serve with Nando's or light mayo.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">@kevkavanagh_coaching</div>
+  </div>
+
+  <!-- ══════════ PAGE 6 · RECIPES 6–8 ══════════ -->
+  <div class="page">
+    <div class="page-accent"></div>
+    <div class="page-header">
+      <div class="page-number">06</div>
+      <div class="section-tag">Recipes</div>
+    </div>
+    <div class="page-title">More <span>Preps</span></div>
+
+    <div class="recipes-grid">
+      <div class="recipe-card">
+        <div class="recipe-header">
+          <div class="recipe-color-bar"></div>
+          <div class="recipe-info">
+            <div class="recipe-name">Salmon Pasta</div>
+            <div class="recipe-macros">
+              <span class="macro-pill macro-cal">488 kcal</span>
+              <span class="macro-pill macro-prot">20g protein</span>
+            </div>
+          </div>
+        </div>
+        <div class="recipe-body">
+          <div class="recipe-col">
+            <div class="recipe-col-title">You Need</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Salmon 120g · Wholemeal pasta 70g</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Mixed herbs · Veggies of choice</div>
+          </div>
+          <div class="recipe-col">
+            <div class="recipe-col-title">Method</div>
+            <div class="recipe-step"><div class="step-num">1</div>Wrap salmon in foil with mixed herbs – oven 20 mins.</div>
+            <div class="recipe-step"><div class="step-num">2</div>Boil pasta with 12 mins to go.</div>
+            <div class="recipe-step"><div class="step-num">3</div>Cook veggies and serve!</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="recipe-card">
+        <div class="recipe-header">
+          <div class="recipe-color-bar"></div>
+          <div class="recipe-info">
+            <div class="recipe-name">Tuna &amp; Quinoa Salad</div>
+            <div class="recipe-macros">
+              <span class="macro-pill macro-cal">270 kcal</span>
+              <span class="macro-pill macro-prot">35g protein</span>
+            </div>
+          </div>
+        </div>
+        <div class="recipe-body">
+          <div class="recipe-col">
+            <div class="recipe-col-title">You Need</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Tuna 120g · Quinoa 50g</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Tomatoes, cucumber, pepper</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Mixed salad · Light mayo + lemon</div>
+          </div>
+          <div class="recipe-col">
+            <div class="recipe-col-title">Method</div>
+            <div class="recipe-step"><div class="step-num">1</div>Rinse quinoa, boil in 150ml water 12–15 mins.</div>
+            <div class="recipe-step"><div class="step-num">2</div>Chop salad, tomatoes, cucumber, pepper.</div>
+            <div class="recipe-step"><div class="step-num">3</div>Mix tuna with light mayo + lemon.</div>
+            <div class="recipe-step"><div class="step-num">4</div>Cool quinoa, combine all and serve!</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="recipe-card">
+        <div class="recipe-header">
+          <div class="recipe-color-bar"></div>
+          <div class="recipe-info">
+            <div class="recipe-name">Tuna Pasta Salad</div>
+            <div class="recipe-macros">
+              <span class="macro-pill macro-cal">380 kcal</span>
+              <span class="macro-pill macro-prot">35g protein</span>
+            </div>
+          </div>
+        </div>
+        <div class="recipe-body">
+          <div class="recipe-col">
+            <div class="recipe-col-title">You Need</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Tuna in spring water (1 can)</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Wholemeal pasta 65g · Light mayo</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Tomatoes · Mixed salad</div>
+          </div>
+          <div class="recipe-col">
+            <div class="recipe-col-title">Method</div>
+            <div class="recipe-step"><div class="step-num">1</div>Boil pasta 10–12 mins.</div>
+            <div class="recipe-step"><div class="step-num">2</div>Mix tuna with light mayo + pepper.</div>
+            <div class="recipe-step"><div class="step-num">3</div>Combine tuna + pasta, serve with salad and tomatoes.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">@kevkavanagh_coaching</div>
+  </div>
+
+  <!-- ══════════ PAGE 7 · RECIPES 9–11 ══════════ -->
+  <div class="page">
+    <div class="page-accent"></div>
+    <div class="page-header">
+      <div class="page-number">07</div>
+      <div class="section-tag">Recipes</div>
+    </div>
+    <div class="page-title">More <span>Preps</span></div>
+
+    <div class="recipes-grid">
+      <div class="recipe-card">
+        <div class="recipe-header">
+          <div class="recipe-color-bar"></div>
+          <div class="recipe-info">
+            <div class="recipe-name">Tuna Salad Wraps</div>
+            <div class="recipe-macros">
+              <span class="macro-pill macro-cal">340 kcal</span>
+              <span class="macro-pill macro-prot">20g protein</span>
+            </div>
+          </div>
+        </div>
+        <div class="recipe-body">
+          <div class="recipe-col">
+            <div class="recipe-col-title">You Need</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Tuna in spring water 120g</div>
+            <div class="recipe-ingredient"><div class="dot"></div>1 wholemeal wrap · Light mayo</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Salad, cucumber, tomatoes, lemon</div>
+          </div>
+          <div class="recipe-col">
+            <div class="recipe-col-title">Method</div>
+            <div class="recipe-step"><div class="step-num">1</div>Mix tuna with light mayo, lemon and black pepper.</div>
+            <div class="recipe-step"><div class="step-num">2</div>Chop cucumber and tomatoes.</div>
+            <div class="recipe-step"><div class="step-num">3</div>Load into wrap with salad and serve.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="recipe-card">
+        <div class="recipe-header">
+          <div class="recipe-color-bar"></div>
+          <div class="recipe-info">
+            <div class="recipe-name">Spicy Turkey Wraps</div>
+            <div class="recipe-macros">
+              <span class="macro-pill macro-cal">335 kcal</span>
+              <span class="macro-pill macro-prot">20g protein</span>
+            </div>
+          </div>
+        </div>
+        <div class="recipe-body">
+          <div class="recipe-col">
+            <div class="recipe-col-title">You Need</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Turkey breast 130g (v: chicken-style pieces)</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Mixed herbs + chilli powder</div>
+            <div class="recipe-ingredient"><div class="dot"></div>1 wholemeal wrap · Salad, cucumber, tomatoes</div>
+          </div>
+          <div class="recipe-col">
+            <div class="recipe-col-title">Method</div>
+            <div class="recipe-step"><div class="step-num">1</div>Fry turkey with spices in fry light – 15 mins.</div>
+            <div class="recipe-step"><div class="step-num">2</div>Chop cucumber and tomatoes.</div>
+            <div class="recipe-step"><div class="step-num">3</div>Serve in wrap with salad.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="recipe-card">
+        <div class="recipe-header">
+          <div class="recipe-color-bar"></div>
+          <div class="recipe-info">
+            <div class="recipe-name">Hot Chilli Con Carne</div>
+            <div class="recipe-macros">
+              <span class="macro-pill macro-cal">490 kcal</span>
+              <span class="macro-pill macro-prot">42g protein</span>
+            </div>
+          </div>
+        </div>
+        <div class="recipe-body">
+          <div class="recipe-col">
+            <div class="recipe-col-title">You Need</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Lean mince 5% – 125g (v: quorn mince)</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Red kidney beans 100g · Wholemeal pasta 65g</div>
+            <div class="recipe-ingredient"><div class="dot"></div>1 pepper · Chilli powder · Broccoli</div>
+          </div>
+          <div class="recipe-col">
+            <div class="recipe-col-title">Method</div>
+            <div class="recipe-step"><div class="step-num">1</div>Brown mince in pan, add pepper, chopped tomatoes + chilli powder.</div>
+            <div class="recipe-step"><div class="step-num">2</div>After 5 mins add kidney beans.</div>
+            <div class="recipe-step"><div class="step-num">3</div>Boil pasta, cook veggies, serve!</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">@kevkavanagh_coaching</div>
+  </div>
+
+  <!-- ══════════ PAGE 8 · RECIPES 12–14 ══════════ -->
+  <div class="page">
+    <div class="page-accent"></div>
+    <div class="page-header">
+      <div class="page-number">08</div>
+      <div class="section-tag">Recipes</div>
+    </div>
+    <div class="page-title">More <span>Preps</span></div>
+
+    <div class="recipes-grid">
+      <div class="recipe-card">
+        <div class="recipe-header">
+          <div class="recipe-color-bar"></div>
+          <div class="recipe-info">
+            <div class="recipe-name">Lean Sausages &amp; Spicy Sweet Potato Wedges</div>
+            <div class="recipe-macros">
+              <span class="macro-pill macro-cal">380 kcal</span>
+              <span class="macro-pill macro-prot">22g protein</span>
+            </div>
+          </div>
+        </div>
+        <div class="recipe-body">
+          <div class="recipe-col">
+            <div class="recipe-col-title">You Need</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Cumberland sausages (v: quorn sausages)</div>
+            <div class="recipe-ingredient"><div class="dot"></div>1 medium sweet potato</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Paprika, mixed herbs · Veggies</div>
+          </div>
+          <div class="recipe-col">
+            <div class="recipe-col-title">Method</div>
+            <div class="recipe-step"><div class="step-num">1</div>Cut sweet potato into thin wedges, season, oven 200°C – 35 mins.</div>
+            <div class="recipe-step"><div class="step-num">2</div>At 12 mins, reduce to 190°C and add sausages.</div>
+            <div class="recipe-step"><div class="step-num">3</div>5 mins left – cook veggies and serve!</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="recipe-card">
+        <div class="recipe-header">
+          <div class="recipe-color-bar"></div>
+          <div class="recipe-info">
+            <div class="recipe-name">Chicken Pesto Pasta</div>
+            <div class="recipe-macros">
+              <span class="macro-pill macro-cal">470 kcal</span>
+              <span class="macro-pill macro-prot">40g protein</span>
+            </div>
+          </div>
+        </div>
+        <div class="recipe-body">
+          <div class="recipe-col">
+            <div class="recipe-col-title">You Need</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Chicken breast 135g (v: chicken-style pieces)</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Wholemeal pasta 70g · Reduced fat pesto 30g</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Mixed spice seasoning · Veggies</div>
+          </div>
+          <div class="recipe-col">
+            <div class="recipe-col-title">Method</div>
+            <div class="recipe-step"><div class="step-num">1</div>Fry chicken in fry light with spice seasoning – 15 mins.</div>
+            <div class="recipe-step"><div class="step-num">2</div>Boil pasta, drain.</div>
+            <div class="recipe-step"><div class="step-num">3</div>Add pesto to pan, stir in chicken + pasta. Serve with veggies.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="recipe-card">
+        <div class="recipe-header">
+          <div class="recipe-color-bar"></div>
+          <div class="recipe-info">
+            <div class="recipe-name">Mediterranean Beef &amp; Rice</div>
+            <div class="recipe-macros">
+              <span class="macro-pill macro-cal">430 kcal</span>
+              <span class="macro-pill macro-prot">28g protein</span>
+            </div>
+          </div>
+        </div>
+        <div class="recipe-body">
+          <div class="recipe-col">
+            <div class="recipe-col-title">You Need</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Lean beef mince 135g (v: quorn mince)</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Brown basmati rice 65g · 1 onion</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Tomato · Cumin, paprika, mint</div>
+          </div>
+          <div class="recipe-col">
+            <div class="recipe-col-title">Method</div>
+            <div class="recipe-step"><div class="step-num">1</div>Brown mince in lidded pan 2–3 mins, add cumin + paprika.</div>
+            <div class="recipe-step"><div class="step-num">2</div>Add onion, then stir in rinsed rice + ⅓ cup water.</div>
+            <div class="recipe-step"><div class="step-num">3</div>Cover + cook 10 mins. Add tomato, green beans, serve!</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">@kevkavanagh_coaching</div>
+  </div>
+
+  <!-- ══════════ PAGE 9 · FINAL RECIPES ══════════ -->
+  <div class="page">
+    <div class="page-accent"></div>
+    <div class="page-header">
+      <div class="page-number">09</div>
+      <div class="section-tag">Recipes</div>
+    </div>
+    <div class="page-title">Final <span>Preps</span></div>
+
+    <div class="recipes-grid">
+      <div class="recipe-card">
+        <div class="recipe-header">
+          <div class="recipe-color-bar"></div>
+          <div class="recipe-info">
+            <div class="recipe-name">Chicken &amp; Couscous Salad</div>
+            <div class="recipe-macros">
+              <span class="macro-pill macro-cal">340 kcal</span>
+              <span class="macro-pill macro-prot">20g protein</span>
+            </div>
+          </div>
+        </div>
+        <div class="recipe-body">
+          <div class="recipe-col">
+            <div class="recipe-col-title">You Need</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Chicken breast 130g (v: chicken-style pieces)</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Couscous 60g · 200ml low-salt veg stock</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Cucumber, tomatoes, mixed salad, chicken spice</div>
+          </div>
+          <div class="recipe-col">
+            <div class="recipe-col-title">Method</div>
+            <div class="recipe-step"><div class="step-num">1</div>Fry chicken with chicken spice – 15 mins.</div>
+            <div class="recipe-step"><div class="step-num">2</div>Pour hot stock over couscous, cover 10 mins until fluffy.</div>
+            <div class="recipe-step"><div class="step-num">3</div>Add chopped veg, cool chicken, combine and serve.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="recipe-card">
+        <div class="recipe-header">
+          <div class="recipe-color-bar"></div>
+          <div class="recipe-info">
+            <div class="recipe-name">Spicy Beef Quinoa</div>
+            <div class="recipe-macros">
+              <span class="macro-pill macro-cal">495 kcal</span>
+              <span class="macro-pill macro-prot">36g protein</span>
+            </div>
+          </div>
+        </div>
+        <div class="recipe-body">
+          <div class="recipe-col">
+            <div class="recipe-col-title">You Need</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Lean beef mince 135g (v: quorn mince)</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Quinoa 50g · Black beans 1 cup · 1 red pepper</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Cumin, chilli, garlic powder · Tomato paste</div>
+          </div>
+          <div class="recipe-col">
+            <div class="recipe-col-title">Method</div>
+            <div class="recipe-step"><div class="step-num">1</div>Brown mince in pan with spices.</div>
+            <div class="recipe-step"><div class="step-num">2</div>Add pepper, spring onion, quinoa, black beans + carrots.</div>
+            <div class="recipe-step"><div class="step-num">3</div>Stir in tomato paste, cook 3 mins. Serve with veggies!</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="recipe-card">
+        <div class="recipe-header">
+          <div class="recipe-color-bar"></div>
+          <div class="recipe-info">
+            <div class="recipe-name">Chicken with Rice &amp; Spinach</div>
+            <div class="recipe-macros">
+              <span class="macro-pill macro-cal">490 kcal</span>
+              <span class="macro-pill macro-prot">35g protein</span>
+            </div>
+          </div>
+        </div>
+        <div class="recipe-body">
+          <div class="recipe-col">
+            <div class="recipe-col-title">You Need</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Chicken breast 135g (v: chicken-style pieces)</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Spinach handful · Chickpeas 50g</div>
+            <div class="recipe-ingredient"><div class="dot"></div>Basmati rice 60g · Carrot + spring onion + garlic</div>
+          </div>
+          <div class="recipe-col">
+            <div class="recipe-col-title">Method</div>
+            <div class="recipe-step"><div class="step-num">1</div>Golden-brown chicken in fry light, set aside.</div>
+            <div class="recipe-step"><div class="step-num">2</div>In same pan: spinach, chickpeas, carrot, rice + water. Cover + cook on medium until done.</div>
+            <div class="recipe-step"><div class="step-num">3</div>Stir chicken back in, season and serve!</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-footer">@kevkavanagh_coaching</div>
+  </div>
+
+  <!-- ══════════ CTA / CLOSE PAGE ══════════ -->
+  <div class="cta-page">
+    <div class="cta-top-bar"></div>
+    <div class="cta-bottom-bar"></div>
+    <div class="cta-eyebrow">ABetterYou Fitness · Free Resource</div>
+    <div class="cta-title">READY TO TAKE<br>IT FURTHER?</div>
+    <div class="cta-divider"></div>
+    <div class="cta-body">
+      If you found this guide helpful and want personalised coaching, custom meal plans, and a training programme built around your goals — let's connect.
+    </div>
+    <div class="cta-handle">@kevkavanagh_coaching</div>
+    <div class="cta-sub">Instagram · DM to get started</div>
+  </div>
+
+</div>
+</body>
+</html>
